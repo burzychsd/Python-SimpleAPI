@@ -2,10 +2,7 @@
 
 {% block content %}
 <form method='POST'> {% csrf_token %}
-	<label for='author'>Author</label><br>
-	<input type='text' name='author' placeholder='Your name'><br>
-	<label for='text'>Comment</label><br>
-	<textarea name='text' cols="30" rows="10"></textarea><br>
+	{{ form.as_p }}
 	<input type='submit' value='Save'>
 </form>
 {% endblock %}

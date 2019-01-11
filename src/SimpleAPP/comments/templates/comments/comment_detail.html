@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
+{% if comments %}
 {% for comment in comments %}
 <h3>{{ comment.author }}</h3>
 <p>{{ comment.text }}</p>
 <p>{{ comment.date }}</p>
+<a href='{{ comment.get_absolute_url }}'>View</a>
 {% endfor %}
+{% endif %}
+<h3>{{ comment.author }}</h3>
+<p>{{ comment.text }}</p>
+<p>{{ comment.date }}</p>
 {% endblock %}
