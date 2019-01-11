@@ -1,12 +1,22 @@
 from django.shortcuts import render
 
+from .forms import CommentForm
 from .models import Comment
+
 # Create your views here.
-def comments_detail_view(request):
-	obj = Comment.objects.get(id=1)
+def comment_create_view(request):
+	form = CommentForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		form = CommentForm()
 	context = {
-		"author": obj.author,
-		"text": obj.text,
-		"date": obj.date
+		'form': form
+	}
+	return render(request, 'comments/comment_create.html', context)
+
+def comments_detail_view(request):
+	comments = Comment.objects.all()
+	context = {
+		"comments": comments
 	}
 	return render(request, 'comments/comment_detail.html', context)
