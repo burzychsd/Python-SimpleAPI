@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<form style='margin-bottom: 20px;' method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update">
+</form>
+<a href='../'>Come Back to List</a>
+{% endblock %}s

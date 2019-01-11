@@ -17,3 +17,6 @@ class Article(models.Model):
 
 	def get_delete_url(self):
 		return reverse('blog:article-delete', kwargs={'id': self.id})
+
+	def get_update_url(self):
+		return reverse('blog:article-update', kwargs={'id': self.id})
