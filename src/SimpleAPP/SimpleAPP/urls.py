@@ -20,6 +20,7 @@ from pages.views import home_view
 
 urlpatterns = [
     path('comments/', include('comments.urls')),
+    path('blog/', include('blog.urls')),
 	path('', home_view, name='home'),
     path('admin/', admin.site.urls),
 ]

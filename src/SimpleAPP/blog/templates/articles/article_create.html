@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Create Article</h1>
+<form style='margin-bottom: 20px;' method='POST'> {% csrf_token %}
+	{{ form.as_p }}
+	<input type='submit' value='Create'>
+</form>
+<a href='../'>Come Back to List</a>
+{% endblock %}s

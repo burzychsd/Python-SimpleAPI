@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Simple Blog</h1>
+<a href='{{ link }}'>Add New Post</a>
+{% for article in articles %}
+	<div>
+		<h2>{{ article.title }}</h2>
+		<p>{{ article.description }}</p>
+		<p>{{ article.author }}</p>
+		<p>{{ article.date }}</p>	
+		<span>
+			<a href='{{ article.get_absolute_url }}'>View</a>
+			
+			<a href='{{ article.get_delete_url }}'>Delete</a>
+		</span>
+	</div>
+{% endfor %}
+{% endblock %}

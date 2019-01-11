@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     #own
     'comments',
+    'blog'
 ]
 
 MIDDLEWARE = [
